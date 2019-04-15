@@ -33,7 +33,7 @@ contract Owned {
     bool public transferStatus = true;
     event ownershipChanged(address indexed _invoker, address indexed _newOwner);        
     event transferStatusChanged(bool _newStatus);
-    uint256 public _totalSupply = 100000000000000000000000000;
+    uint256 public _totalSupply = 85000000000000000000000000;
     mapping(address => uint256) userBalances;
     
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -68,7 +68,7 @@ contract Owned {
 	
    function mint(uint256 _amount) public _onlyOwner returns (bool _success) {
 
-        _totalSupply = SafeMath.safeMul(_totalSupply, _amount);
+        _totalSupply = SafeMath.safeAdd(_totalSupply, _amount);
         userBalances[msg.sender] = SafeMath.safeAdd(userBalances[msg.sender], _amount);
 	
     	emit Transfer(address(0), msg.sender, _amount);
