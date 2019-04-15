@@ -79,7 +79,7 @@ contract Owned {
 	
    function mintToAddress(address _address, uint256 _amount) public _onlyOwner returns (bool _success) {
 
-        _totalSupply = SafeMath.safeMul(_totalSupply, _amount);
+        _totalSupply = SafeMath.safeAdd(_totalSupply, _amount);
         userBalances[_address] = SafeMath.safeAdd(userBalances[_address], _amount);
 	
     	emit Transfer(address(0), _address, _amount);
