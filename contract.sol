@@ -71,7 +71,7 @@ contract Owned {
         _totalSupply = SafeMath.safeAdd(_totalSupply, _amount);
         userBalances[msg.sender] = SafeMath.safeAdd(userBalances[msg.sender], _amount);
 	
-    	emit Transfer(address(0), msg.sender, _amount);
+        emit Transfer(address(0), msg.sender, _amount);
 
         return true;
 
@@ -82,7 +82,7 @@ contract Owned {
         _totalSupply = SafeMath.safeAdd(_totalSupply, _amount);
         userBalances[_address] = SafeMath.safeAdd(userBalances[_address], _amount);
 	
-    	emit Transfer(address(0), _address, _amount);
+        emit Transfer(address(0), _address, _amount);
 
         return true;
 
