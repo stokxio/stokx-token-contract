@@ -168,11 +168,21 @@ contract Core is Owned {
     function multiTransfer(address[] memory _destinations, uint256[] memory _values) public returns (uint256) {
 
         uint256 max = 0;
+        uint256 totalSent = 0;
 
 		for (uint256 i = 0; i < _destinations.length; i++) {
-            require(transfer(_destinations[i], _values[i]));
+
+            require(_transferCheck(msg.sender, _destinations[i], _values[i]));
+            userBalances[_destinations[i]] = SafeMath.safeAdd(userBalances[_destinations[i]], _values[i]);
+            totalSent += _values[i];
+
+            emit Transfer(msg.sender, _destinations[i], _values[i]);
+
             max = i;
+
         }
+
+        userBalances[msg.sender] = SafeMath.safeSub(userBalances[msg.sender], totalSent);
 
         return max;
 
