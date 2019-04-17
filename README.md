@@ -1,4 +1,4 @@
-# Stoxk.io Token
+# stoxk.io Token
 
 This is the official repository for Stoxk Token source code.
 
