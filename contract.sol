@@ -33,7 +33,7 @@ contract Owned {
     bool public transferStatus = true;
     event ownershipChanged(address indexed _invoker, address indexed _newOwner);        
     event transferStatusChanged(bool _newStatus);
-    uint256 public _totalSupply = 85000000000000000000000000;
+    uint256 public _totalSupply = 100000000000000000000000000;
     mapping(address => uint256) userBalances;
     
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -116,8 +116,8 @@ contract Owned {
 
 contract Core is Owned {
 
-    string public name = "XXX";
-    string public symbol = "XXX";
+    string public name = "STOKX";
+    string public symbol = "STOKX";
     uint256 public decimals = 18;
     mapping(address => mapping(address => uint256)) public userAllowances;
 
