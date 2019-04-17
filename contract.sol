@@ -130,11 +130,10 @@ contract Core is Owned {
     function _transferCheck(address _sender, address _recipient, uint256 _amount) private view returns (bool success) {
 
         require(transferStatus == true);
-        require(_amount > 0);
         require(_recipient != address(0));
         require(userBalances[_sender] >= _amount);
         require(SafeMath.safeSub(userBalances[_sender], _amount) >= 0);
-        require(SafeMath.safeAdd(userBalances[_recipient], _amount) > userBalances[_recipient]);
+        require(SafeMath.safeAdd(userBalances[_recipient], _amount) >= userBalances[_recipient]);
         
         return true;
 
