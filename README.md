@@ -1,6 +1,6 @@
 # stoxk.io Token
 
-This is the official repository for Stoxk Token source code.
+This is the official repository for stoxk.io Token source code.
 
 Name: STOKX
 
