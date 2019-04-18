@@ -10,4 +10,6 @@ Decimals: 18
 
 Initial Supply: 100,000,000 (100M)
 
-Contract Address: 0x
+Optimization: Enabled
+
+Contract Address: 0xde28ba718564A02Fb896DC31Fd482165306e45aA
