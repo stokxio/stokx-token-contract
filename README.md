@@ -9,3 +9,5 @@ Symbol: STOKX
 Decimals: 18
 
 Initial Supply: 100,000,000 (100M)
+
+Contract Address: 0x
